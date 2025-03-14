@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="Free converter json to typecript">
+        <meta name="keywords" content="json, JSON, typecript,TYPESCRIPT, convert, to, json to typescript, convert json to typescript, from json, javascript to typescript">
+        <meta name="author" content="Daniel Lima">
+        <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Json to Typescript | Daniel Lima</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <div class="header-container">
+                    <div class="header-logo">
+                        <div>
+                            <h1 class="header-title">JSON <i class="fa fa-chevron-circle-right"></i> TYPESCRIPT</h1>
+                            <p class="header-subtitle">100% typed!</p>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <section>
+                <div class="textarea-container">
+                    <div class="textarea-header-container">
+                        <h2 class="label-textarea">JSON</h2>
+                        <div>
+                            <button title="Demo" onclick="setDemo()" class="btn-action clipborad"><i class="fa fa-align-left"></i></button>
+                            <button title="Clear" onclick="clearInput()" class="btn-action clipborad"><i class="fa fa-eraser"></i></button>
+                        </div>
+                    </div>
+                    <textarea onkeydown="verifyTab(event)" id="input-json"></textarea>
+                </div>
+
+                <div class="arrow-container">
+                    <i class="fa fa-arrow-right arrow-json"></i>
+                </div>
+
+                <div class="textarea-container">
+                    <div class="textarea-header-container">
+                        <h2 class="label-textarea">TYPESCRIPT</h2>
+                        <button title="Copy" onclick="clipborad()" class="btn-action clipborad"><i class="fa fa-copy"></i></button>
+                    </div>
+                    <textarea readonly="readonly" id="input-ts"></textarea>
+                </div>
+            </section>
+            <div class="container-submit">
+                <button class="btn-submit" onclick="transform();">Process</button>
+            </div>
+            <footer>
+                <div class="footer-container">
+                    <a class="footer-by" href="#">© Mateus Macedo</a>
+                </div>
+            </footer>
+        </div>
+    </body>
+    <script src="script.js"></script>
+</html>
