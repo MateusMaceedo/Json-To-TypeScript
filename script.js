@@ -11,7 +11,7 @@ function transform(){
     }
     const json = JSON.parse(inputJson.value);
     output += mapper(json, true);
-    
+
     while(true){
         let stack = getObjectsStack();
         if(stack){
@@ -34,7 +34,7 @@ function transform(){
 function replaceObjectNames(output){
     const stack = getObjectsStack();
     if(stack){
-        
+
         stack.forEach(obj => {
             output = output.replace(`%${obj.name}%`, setCamelCase(obj.name));
         });
@@ -48,7 +48,7 @@ function mapper(object, first, nameAttr){
     }
 
     let str = setInitialInterface(object, nameAttr);
-    for(var propertyName in object) { 
+    for(var propertyName in object) {
         let name = propertyName;
         let value = object[name];
         let type = getType(value, name);
@@ -60,7 +60,7 @@ function mapper(object, first, nameAttr){
 }
 
 function setInitialInterface(object, nameAttr){
-   
+
     return `export interface ${nameAttr? setCamelCase(nameAttr) : 'MyObject'} {\n`;
 }
 
@@ -108,8 +108,8 @@ function getType(attribute, nameAttr){
                     return{type: `Array<${arrayType.type}>`, optional: arrayType.optional};
                 }
                 return {type: "Array<any>",optional: true};
-            } 
-            
+            }
+
             addObjectStack(attribute,nameAttr);
             return {type: `%${nameAttr}%`};
             break;
@@ -125,7 +125,7 @@ function getType(attribute, nameAttr){
 
         case "string": {
             if(isDate(attribute)) return {type:"Date"};
-            
+
             if(attribute.length == 0) return  {type:"any",  optional: true};
 
              if(attribute[attribute.length-2]== '(' && attribute[attribute.length-1]== ')') return  {type:"Function"};
@@ -192,11 +192,11 @@ function verifyTab(e){
         inputJson.value = `${textBefore}    ${textAfter}`;
         inputJson.selectionStart = position + 4;
         inputJson.selectionEnd = position + 4;
-    } 
+    }
 }
 
 function setDemo(){
-    inputJson.value = 
+    inputJson.value =
 `{
     "data": [{
         "type": "articles",
